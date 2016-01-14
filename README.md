@@ -14,6 +14,10 @@ the *config.properties* must be located in the __src__ folder<br>
 ### Running
 Import the project into Spring Tool Suite or Eclipse and run it on tomcat or any other server of your choice.<br>
 
+### Database Schema
+![alt text](http://s14.postimg.org/ios3ifnql/Untitled_Diagram.png "Datanbase Schema")
+
+
 ### Deployment
 The entire project can be exported into a **_.war_** file that can be deployed into any supported webserver.<br>
 
