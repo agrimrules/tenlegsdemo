@@ -20,3 +20,15 @@ The entire project can be exported into a **_.war_** file that can be deployed i
 ### Demo
 The API has been deployed at **_api.agrimasthana.com/tenlegs/user/_** with basic _GET_ , _PUT_ , _POST_ , _DELETE_ methods <br>
 that can be seen in  _UserController.java_ 
+
+### Api-Reference
+Except for GET requests all other requests need the request header 'Content-Type' to be set to 'application/json'
+
+| Method        | Input         | Output|
+| ------------- |:-------------:| -----:|
+|GET /user/     | none          |List of all users |
+|GET /user/1    | none          | details of user with id 1 |
+|POST /user/    | JSON object of user with date_joined optional      |HTTP 201 |
+|PUT /user/    | JSON object of exiting user with valid id      |HTTP 200 |
+|DELETE /user/2    | none      |HTTP 200 |
+
