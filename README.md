@@ -21,9 +21,12 @@ Import the project into Spring Tool Suite or Eclipse and run it on tomcat or any
 ### Deployment
 The entire project can be exported into a **_.war_** file that can be deployed into any supported webserver.<br>
 
+### Docker
+The application has been built into a Docker container and can be [pulled](https://hub.docker.com/r/agrimasthana/tenlegsapi/)
+
 ### Demo
 The API has been deployed at **_api.agrimasthana.com/tenlegs/user/_** with basic _GET_ , _PUT_ , _POST_ , _DELETE_ methods <br>
-that can be seen in  _UserController.java_ 
+that can be seen in  _UserController.java_
 
 ### Api-Reference
 Except for GET requests all other requests need the request header 'Content-Type' to be set to 'application/json'
@@ -35,4 +38,3 @@ Except for GET requests all other requests need the request header 'Content-Type
 |POST /user/    | JSON object of user with date_joined optional      |HTTP 201 |
 |PUT /user/    | JSON object of exiting user with valid id      |HTTP 200 |
 |DELETE /user/2    | none      |HTTP 200 |
-
