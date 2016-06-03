@@ -1,0 +1,113 @@
+swagger: '2.0'
+info:
+  title: Tenlegs API
+  description: Sample API made for tenlegs
+  version: "0.0.1"
+# the domain of the service
+host: api.agrimasthana.com
+# array of all schemes that your API supports
+schemes:
+  - http
+# will be prefixed to all paths
+basePath: /tenlegs
+produces:
+  - application/json
+paths:
+  /user/:
+    get:
+      summary: Users
+      description: |
+        Get list of users.
+      parameters:
+        - name: id
+          in: query
+          description: Unique id of user.
+          required: false
+          type: number
+          format: int32
+      tags:
+        - User
+      responses:
+        200:
+          description: An array of users
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+        default:
+          description: Unexpected error
+
+  # /user/:
+    post:
+      summary: Create a user
+      description: |
+        create a new user.
+      parameters:
+        - name: User
+          in: body
+          schema:
+            $ref: '#/definitions/User'
+      tags:
+        - User
+      responses:
+        200:
+          description: created user
+          schema:
+            $ref: '#/definitions/User'
+        default:
+          description: Unexpected error
+    put:
+      summary: Update user
+      description:  |
+        Update properties of a user.
+      parameters:
+        - name: id
+          in: query
+          description: Unique id of user.
+          required: false
+          type: number
+          format: int32
+        - name: User
+          in: body
+          schema:
+            $ref: '#/definitions/User'
+      tags:
+        - User
+      responses:
+          201:
+            description: updated
+            schema:
+              $ref: '#/definitions/User'
+          default:
+            description: Unexpected error
+    delete:
+      summary: Remove a user
+      description:  |
+        Delete a user from the database.
+      parameters:
+        - name: id
+          in: query
+          description: Unique id of a user.
+          required: true
+          type: number
+          format: int32
+      tags:
+        - User
+      responses:
+        200:
+          description: deleted
+        default:
+          description: Something went wrong
+definitions:
+  User:
+    type: object
+    properties:
+      user_id:
+        type: integer
+        description: lorem.
+      name:
+        type: string
+        description: Description of product.
+      date_joined:
+        type: string
+        description: Display name of product.
